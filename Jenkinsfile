@@ -4,20 +4,20 @@ pipeline {
     stages {
         stage('Clone Code') {
             steps {
-                git 'https://github.com/KyathamRohith/flask-cicd.git'
+                git 'https://github.com/pravalikaa18/flask-cicd.git'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t rohith1305/flask-cicd:latest .'
+                sh 'docker build -t pravalikaa18/flask-cicd:latest .'
             }
         }
 
         stage('Push to Docker Hub') {
             steps {
-                withDockerRegistry([credentialsId: '93c470a0-e8fe-425c-8f55-932aae8919d4', url: '']) {
-                    sh 'docker push rohith1305/flask-cicd:latest'
+                withDockerRegistry([credentialsId: '395ce1a5-6982-4c78-9994-4a2e8dbce27a', url: '']) {
+                    sh 'docker push pravalikaa18/flask-cicd:latest'
                 }
             }
         }
